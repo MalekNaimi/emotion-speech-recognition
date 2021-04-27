@@ -8,23 +8,14 @@ import librosa
 import numpy as np
 import seaborn as sns
 from train import get_data
+from sklearn.metrics import confusion_matrix
 
 emotion_classes=['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral']
-
-
-def test(model_path:str):
-    U_train, X_train, Y_train, U_test, X_test, Y_test = get_data()
-    model=load_model(model_path)
-    Y_pred = model.predict([U_test, X_test])
-    matrix = confusion_matrix(Y_test.argmax(axis=1), Y_pred.argmax(axis=1))
-    ax = sns.heatmap(matrix, annot=True, fmt="d", cmap = 'rocket_r', emotion_classes=['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral'])
-    return matrix
-    
-    
-    
-    if __name__ == '__main__':
-       model_path='weights_blstm_hyperas_1.h5'
-       matrix = test(model_path)
-       print(matrix)
-       
+U_train, X_train, Y_train, U_test, X_test, Y_test = get_data()
+model_path='weights_blstm_hyperas_1.h5'
+model=load_model(model_path)
+Y_pred = model.predict([U_test, X_test])
+matrix = confusion_matrix(Y_test.argmax(axis=1), Y_pred.argmax(axis=1))
+ax = sns.heatmap(matrix, annot=True, fmt="d", cmap = 'rocket_r', xticklabels = ['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral'], yticklabels = ['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral'])
+print(matrix)
 
