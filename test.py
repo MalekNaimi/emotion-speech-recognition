@@ -34,7 +34,7 @@ def predict(data_path:str,model_path:str):
 if __name__ == '__main__':
     rootdir= '/content/drive/MyDrive/DATAFINAL/Session1/sentences/wav/'
     model_path='weights_blstm_hyperas_1.h5'
-    data=pd.read_csv('df_iemocap_1.csv')
+    data=pd.read_csv('/content/df_iemocap_1.csv')
     for ses in os.listdir(rootdir):
             wav = os.path.join(rootdir,ses,'*.wav')
             files=glob.glob(wav)
