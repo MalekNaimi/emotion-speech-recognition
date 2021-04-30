@@ -16,7 +16,6 @@ import pandas as pd
 
 
 
-pd.read_csv('df_iemocap_1.csv', header=None, nrows=7)
 
 
 emotion_classes=['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral']
