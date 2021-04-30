@@ -13,7 +13,7 @@ from utility import functions, globalvars
 import librosa
 import numpy as np
 import pandas as pd
-
+import glob
 
 
 
@@ -44,7 +44,7 @@ if __name__ == '__main__':
                 if i==wavename:
                   index=data[data['wav_file']==i].index.values[0]
                   emotion=data._get_value(index,'emotion')
-                  data_path='file'
+                  data_path=file
                   result=predict(data_path,model_path)
                   assert len(result)==globalvars.nb_classes
                   index_top_n=np.argsort(result)[-globalvars.top_n:]
@@ -52,4 +52,4 @@ if __name__ == '__main__':
                   probability_result=[result[i] for i in index_top_n]
                   result=zip(human_result,probability_result)
                   for x in result:
-                    print('the top {} emotion is:{}'.format(globalvars.top_n,x))
+                    print('the top {} emotion is:{}'.format(globalvars.top_n,x),emotion)
