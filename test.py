@@ -14,6 +14,7 @@ import librosa
 import numpy as np
 import pandas as pd
 import glob
+from sklearn.metrics import confusion_matrix
 
 
 
@@ -62,4 +63,5 @@ if __name__ == '__main__':
                     l1.append(x[0])
                     l2.append(emotion)
                     print(l1,l2)
-                  #confusion_matrix(l1, l2, labels=['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral'])
+  matrix=confusion_matrix(l2, l1, labels=['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral'])
+  print(matrix)
