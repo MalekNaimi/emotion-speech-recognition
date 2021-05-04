@@ -62,6 +62,5 @@ if __name__ == '__main__':
                     print('the top {} emotion is:{}'.format(globalvars.top_n,x),emotion)
                     l1.append(x[0])
                     l2.append(emotion)
-                    print(l1,l2)
   matrix=confusion_matrix(l2, l1, labels=['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral'])
   print(matrix)
