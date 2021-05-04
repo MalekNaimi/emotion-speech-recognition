@@ -18,8 +18,7 @@ import glob
 
 
 
-#emotion_classes=['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral']
-emotion_classes=['anger','happiness','sadness','neutral']
+emotion_classes=['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral']
 
 def predict(data_path:str,model_path:str):
     y,sr=librosa.load(data_path,sr=16000) # librosa:load wav
@@ -63,4 +62,4 @@ if __name__ == '__main__':
                     l1.append(human_result)
                     l2.append(emotion)
                     print(l1,l2)
-                  #confusion_matrix(l1, l2, labels=['happiness', 'anger', 'sadness','neutral'])
+                  #confusion_matrix(l1, l2, labels=['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral'])
