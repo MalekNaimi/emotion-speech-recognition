@@ -41,7 +41,7 @@ if __name__ == '__main__':
     for ses in os.listdir(rootdir):
             wav = os.path.join(rootdir,ses,'*.wav')
             files=glob.glob(wav)
-            t=0
+            l1=[],l2=[]
             for file in files:
               wavename=file.split("/")[9].split(".")[0]
               for i in (data['wav_file']) :
@@ -57,3 +57,6 @@ if __name__ == '__main__':
                   result=zip(human_result,probability_result)
                   for x in result:
                     print('the top {} emotion is:{}'.format(globalvars.top_n,x),emotion)
+                    l1.append(human_result)
+                    l2.append(emotion)
+                    
