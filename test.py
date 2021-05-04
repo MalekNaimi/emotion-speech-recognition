@@ -18,8 +18,7 @@ import glob
 
 
 
-#emotion_classes=['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral']
-emotion_classes=['anger''happiness','sadness','neutral']
+emotion_classes=['anger','boredom','disgust','anxiety/fear','happiness','sadness','neutral']
 
 def predict(data_path:str,model_path:str):
     y,sr=librosa.load(data_path,sr=16000) # librosa:load wav
