@@ -34,6 +34,10 @@ if __name__ == '__main__':
     rootdir= '/content/drive/MyDrive/DATAFINAL/Session1/sentences/wav/'
     model_path='weights_blstm_hyperas_1.h5'
     data=pd.read_csv('/content/drive/MyDrive/df_iemocap_1 - test.csv')
+    data.drop(data[data['emotion']=='xxx'].index, inplace = True)
+    data.drop(data[data['emotion']=='fru'].index, inplace = True)
+    data.drop(data[data['emotion']=='exc'].index, inplace = True)
+    data.drop(data[data['emotion']=='sur'].index, inplace = True)
     for ses in os.listdir(rootdir):
             wav = os.path.join(rootdir,ses,'*.wav')
             files=glob.glob(wav)
