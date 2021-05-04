@@ -55,8 +55,7 @@ if __name__ == '__main__':
                   human_result=[emotion_classes[i] for i in index_top_n]
                   probability_result=[result[i] for i in index_top_n]
                   result=zip(human_result,probability_result)
-                  for x in result:
-                    print('the top {} emotion is:{}'.format(globalvars.top_n,x),emotion)
-                    l1.append(human_result)
-                    l2.append(emotion)
-                    
+                  print('the top {} emotion is:{}'.format(globalvars.top_n,x),emotion)
+                  l1.append(human_result)
+                  l2.append(emotion)
+                  #confusion_matrix(l1, l2, labels=['happiness', 'anger', 'sadness','neutral'])
