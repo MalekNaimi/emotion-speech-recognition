@@ -18,4 +18,4 @@ dataset = 'berlin'
 feature_extract=True
 load_data=True
 train_data_path='/content/drive/MyDrive/Emo-DB/download.zip (Unzipped Files)/wav' # 训练数据集位置
-top_n=2 # 取最可能的topN结果
+top_n=1 # 取最可能的topN结果
